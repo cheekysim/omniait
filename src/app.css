@@ -1,5 +1,6 @@
-@import 'tailwindcss';
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @layer base {
 	:root {
 		--background: 0 0% 100%;
@@ -44,4 +45,35 @@
 		--input: 215 27.9% 16.9%;
 		--ring: 263.4 70% 50.4%;
 	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: hsl(var(--muted));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: hsl(var(--muted-foreground));
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: hsl(var(--foreground));
 }
