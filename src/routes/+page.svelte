@@ -3,5 +3,7 @@
 	<p class="text-center text-lg">
 		Welcome to Omnia IT, our website is currently under construction. We appreciate your patience.
 	</p>
-	<p class="text-md text-center text-gray-500">Stay tuned for updates!</p>
+	<p class="text-md text-center text-gray-500">
+		Contact us at <a href="mailto:euan@omniait.co.uk">euan@omniait.co.uk</a> for inquiries.
+	</p>
 </section>
