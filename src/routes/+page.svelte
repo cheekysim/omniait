@@ -1,10 +1,5 @@
 <script lang="ts">
 	let { data } = $props();
-
-	function getOrbitOffset(time: number): number {
-		// Varies between 150px and 250px using a sine wave
-		return 200 + Math.sin(time * 2 * Math.PI) * 50;
-	}
 </script>
 
 <svelte:head>
@@ -18,7 +13,7 @@
 <section class="relative grid flex-grow place-items-center">
 	<div class="z-10 space-y-2 text-center">
 		<h1 class="text-4xl font-bold">Omnia IT - A Premium IT Consulting Company</h1>
-		<p class="text-primary-foreground/60">Website Still Under Construction</p>
+		<p class="text-primary-foreground/60">Website Under Construction - Currently Completing Client Work</p>
 	</div>
 	<div class="animate-orbit absolute size-64 rounded-full bg-primary/60 blur-[192px]"></div>
 	<div class="animate-orbit-alt absolute size-64 rounded-full bg-primary/60 blur-[192px]"></div>
