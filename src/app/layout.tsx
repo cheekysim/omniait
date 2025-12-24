@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, VT323 } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
@@ -16,8 +16,8 @@ export function ThemeProvider({
   );
 }
 
-const vt323 = VT323({
-  variable: "--font-vt323",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${vt323.variable} antialiased`}>
+      <body className={`${nunito.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
