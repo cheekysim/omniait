@@ -20,28 +20,39 @@ export default function GridBackground() {
   );
   const y = useSpring(yShift, { stiffness: 60, damping: 20, mass: 0.4 });
 
+  const mouseElRef = useRef<HTMLDivElement | null>(null);
+
   // Mouse-follow glow via CSS variables to avoid frequent React state updates
   useEffect(() => {
-    let raf = 0;
     const onMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const el = containerRef.current!;
-        // Use pixels for precision; CSS falls back to 50% if unset
-        el.style.setProperty("--mx", `${e.clientX}px`);
-        el.style.setProperty("--my", `${e.clientY}px`);
-      });
+      if (!mouseElRef.current) return;
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      // Update position directly to avoid stacking zero-duration WAAPI animations
+      // mouseElRef.current.style.left = `${mouseX}px`;
+      // mouseElRef.current.style.top = `${mouseY}px`;
+
+      mouseElRef.current.animate(
+        {
+          transform: `translate3d(${mouseX}px, ${mouseY}px, 0)`,
+        },
+        { duration: 1000, fill: "forwards", easing: "ease-out" }
+      );
     };
     window.addEventListener("mousemove", onMove, { passive: true });
     return () => {
       window.removeEventListener("mousemove", onMove);
-      if (raf) cancelAnimationFrame(raf);
     };
   }, []);
 
   return (
     <>
+      {/* Follow Mouse / Glow */}
+      <div
+        ref={mouseElRef}
+        className="fixed z-0 size-42 bg-radial-[circle] from-white to-white/50 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-0 md:opacity-30"
+      ></div>
       <motion.div
         ref={containerRef}
         className="pointer-events-none fixed h-[120dvh] inset-0 z-0 overflow-hidden grid-overlay"
@@ -49,16 +60,14 @@ export default function GridBackground() {
         aria-hidden="true"
       >
         <div className="absolute inset-0 grid-pattern" />
-        <div className="absolute inset-0 grid-glow" />
       </motion.div>
 
       <style jsx>{`
         .grid-overlay,
-        .grid-pattern .grid-glow {
+        .grid-pattern {
           --mx: 50%;
           --my: 50%;
           --grid-color: rgba(255, 255, 255, 0.1);
-          --glow-color: 255, 255, 255;
         }
 
         :global(.light) .grid-overlay,
@@ -69,32 +78,21 @@ export default function GridBackground() {
         .grid-pattern {
           background-image: repeating-linear-gradient(
               0deg,
-              rgba(255, 255, 255, 0.1) 0px,
-              rgba(255, 255, 255, 0.1) 1px,
+              rgba(100, 100, 100, 0.1) 0px,
+              rgba(100, 100, 100, 0.1) 1px,
               transparent 1px,
               transparent 40px
             ),
             repeating-linear-gradient(
               90deg,
-              rgba(255, 255, 255, 0.1) 0px,
-              rgba(255, 255, 255, 0.1) 1px,
+              rgba(100, 100, 100, 0.1) 0px,
+              rgba(100, 100, 100, 0.1) 1px,
               transparent 1px,
               transparent 40px
             );
         }
-
-        .grid-glow {
-          background: radial-gradient(
-            circle at var(--mx) var(--my),
-            rgba(var(--glow-color), 0.15) 0%,
-            rgba(var(--glow-color), 0.05) 30%,
-            rgba(var(--glow-color), 0) 60%
-          );
-        }
-
         @media (prefers-reduced-motion: reduce) {
-          .grid-pattern,
-          .grid-glow {
+          .grid-pattern {
             transition: none;
           }
         }
