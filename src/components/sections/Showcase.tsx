@@ -29,15 +29,15 @@ function Item(project: Project) {
 
   return (
     <motion.div
-      className={`grid place-items-center grid-flow-row md:grid-cols-1 gap-4 md:gap-0 mx-6 md:h-86.25 ${
-        isInView ? "md:grid-cols-2" : "md:grid-cols-1"
+      className={`grid place-items-center grid-flow-row lg:grid-cols-1 gap-4 lg:gap-0 mx-6 lg:h-86.25 ${
+        isInView ? "lg:grid-cols-2" : "lg:grid-cols-1"
       }`}
       layout
     >
       {/* Image */}
       <motion.div
-        className={`relative col-start-1 row-start-1 z-10 grid place-items-center md:h-86.25 ${
-          isInView ? "md:w-full md:mr-2" : "md:w-1/2"
+        className={`relative col-start-1 row-start-1 z-10 grid place-items-center lg:h-86.25 ${
+          isInView ? "lg:w-full lg:mr-2" : "lg:w-1/2"
         }`}
         ref={ref}
         layout
@@ -52,8 +52,8 @@ function Item(project: Project) {
       </motion.div>
       {/* Description */}
       <motion.div
-        className={`md:row-start-1 col-start-1 z-0 md:h-86.25 ${
-          isInView ? "md:col-start-2 md:ml-2" : "md:col-start-1 md:w-1/2"
+        className={`lg:row-start-1 col-start-1 z-0 lg:h-86.25 ${
+          isInView ? "lg:col-start-2 lg:ml-2" : "lg:col-start-1 lg:w-1/2"
         }`}
         layout
       >
@@ -62,7 +62,7 @@ function Item(project: Project) {
             <CardTitle className="font-bold text-lg">{project.title}</CardTitle>
           </CardHeader>
           <CardContent>
-            {/* <ScrollArea className={`md:h-40 ${isInView ? "h-auto" : "h-16"}`}> */}
+            {/* <ScrollArea className={`lg:h-40 ${isInView ? "h-auto" : "h-16"}`}> */}
             {project.description}
             {/* </ScrollArea> */}
           </CardContent>
@@ -113,7 +113,7 @@ export default function Showcase() {
 
   return (
     <>
-      <section className="grid grid-cols-1 max-w-6xl mx-auto md:gap-8 gap-16 snap-y mb-48">
+      <section className="grid grid-cols-1 max-w-6xl mx-auto lg:gap-8 gap-16 snap-y mb-48">
         {/* Grid of project cards */}
         {projects.map((project) => (
           <Item key={project.title} {...project} />

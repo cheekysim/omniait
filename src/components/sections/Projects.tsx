@@ -36,12 +36,12 @@ export default function Description() {
   return (
     <section
       ref={scrollRef}
-      className="relative flex min-h-[220dvh] flex-col items-center justify-start"
+      className="relative flex md:min-h-[220dvh] flex-col items-center justify-start md:mb-0 mb-16"
       id="description"
     >
       <motion.svg
         viewBox="0 0 200 850"
-        className="h-[200dvh] w-full max-w-[75dvw] absolute z-20 top-0 left-1/2 -translate-x-1/2 pointer-events-none"
+        className="md:h-[200dvh] w-full max-w-[75dvw] absolute z-20 top-0 left-1/2 -translate-x-1/2 pointer-events-none hidden md:block"
       >
         <motion.path
           d="M0 0 L0 360 Q0 425 50 425 L150 425 Q200 425 200 465 L200 760 Q200 800 140 800 Q100 800 100 840 L100 850"
@@ -54,8 +54,8 @@ export default function Description() {
           style={{ pathLength, opacity: pathOpacity }}
         />
       </motion.svg>
-      <div className="grid grid-rows-2 h-[200dvh]">
-        <div className="grid grid-cols-4 grid-rows-1 place-items-center z-10">
+      <div className="grid grid-rows-2 md:h-[200dvh]">
+        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-1 place-items-center z-10">
           {/* Card Content */}
           <MotionCard
             className="col-span-2 col-start-3 p-4 xl:m-32 lg:m-24 h-fit md:m-16 m-8"
@@ -93,11 +93,11 @@ export default function Description() {
           </MotionCard>
           {/* Side Animations */}
           <SideAnimations
-            className="col-end-3 col-start-1 row-start-1"
+            className="col-end-3 col-start-1 row-start-1 hidden md:block"
             reverse
           />
         </div>
-        <div className="grid grid-cols-4 place-items-center grid-rows-1 z-10">
+        <div className="grid md:grid-cols-4 grid-rows-1 place-items-center z-10">
           {/* Card Content */}
           <MotionCard
             className="col-span-2 p-4 xl:m-32 lg:m-24 h-fit md:m-16 m-8"
@@ -130,7 +130,7 @@ export default function Description() {
           </MotionCard>
           {/* Side Animations */}
           <SideAnimations
-            className="col-end-5 col-start-3 row-start-1"
+            className="col-end-5 col-start-3 row-start-1 hidden md:block"
             seed={53}
           />
           <div></div>

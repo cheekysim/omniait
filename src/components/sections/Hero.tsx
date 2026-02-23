@@ -1,8 +1,27 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import HeroSVG from "../HeroSVG";
+import HeroSVGMobile from "../HeroSVGMobile";
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="flex min-h-screen flex-col items-center justify-between">
       <div className="z-10 w-full max-w-5xl items-center justify-around text-sm flex h-full grow">
@@ -10,7 +29,7 @@ export default function Hero() {
           Omnia IT
         </p>
       </div>
-      <HeroSVG />
+      {isMobile ? <HeroSVGMobile /> : <HeroSVG />}
     </section>
   );
 }
