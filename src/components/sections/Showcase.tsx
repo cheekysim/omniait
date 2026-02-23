@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface Project {
   title: string;
@@ -26,18 +25,19 @@ interface Project {
 function Item(project: Project) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.9 });
+  // const isInView = false;
 
   return (
     <motion.div
-      className={`grid place-items-center gap-4 md:grid-rows-1 grid-cols-1 h-80 ${
-        isInView ? "md:grid-cols-2 grid-rows-2" : "md:grid-cols-1 grid-rows-1"
+      className={`grid place-items-center grid-flow-row md:grid-cols-1 gap-4 md:gap-0 mx-6 md:h-86.25 ${
+        isInView ? "md:grid-cols-2" : "md:grid-cols-1"
       }`}
       layout
     >
       {/* Image */}
       <motion.div
-        className={`relative col-start-1 row-start-1 z-10 h-full ${
-          isInView ? "w-full" : "w-1/2"
+        className={`relative col-start-1 row-start-1 z-10 grid place-items-center md:h-86.25 ${
+          isInView ? "md:w-full md:mr-2" : "md:w-1/2"
         }`}
         ref={ref}
         layout
@@ -52,10 +52,8 @@ function Item(project: Project) {
       </motion.div>
       {/* Description */}
       <motion.div
-        className={`md:row-start-1 col-start-1 z-0 h-full ${
-          isInView
-            ? "md:col-start-2 row-start-2 w-auto"
-            : "md:col-start-1 row-start-1 max-w-sm overflow-hidden"
+        className={`md:row-start-1 col-start-1 z-0 md:h-86.25 ${
+          isInView ? "md:col-start-2 md:ml-2" : "md:col-start-1 md:w-1/2"
         }`}
         layout
       >
@@ -64,7 +62,9 @@ function Item(project: Project) {
             <CardTitle className="font-bold text-lg">{project.title}</CardTitle>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-40">{project.description}</ScrollArea>
+            {/* <ScrollArea className={`md:h-40 ${isInView ? "h-auto" : "h-16"}`}> */}
+            {project.description}
+            {/* </ScrollArea> */}
           </CardContent>
           <CardFooter>
             <Button asChild>
@@ -113,7 +113,7 @@ export default function Showcase() {
 
   return (
     <>
-      <section className="grid grid-cols-1 max-w-5xl mx-auto gap-8 snap-y mb-32">
+      <section className="grid grid-cols-1 max-w-6xl mx-auto md:gap-8 gap-16 snap-y mb-48">
         {/* Grid of project cards */}
         {projects.map((project) => (
           <Item key={project.title} {...project} />

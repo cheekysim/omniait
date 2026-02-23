@@ -87,9 +87,7 @@ export default function Description() {
             </CardContent>
             <CardFooter>
               <Button asChild>
-                <Link href="https://thepassportexpert.co.uk" target="_blank">
-                  Learn More
-                </Link>
+                <Link href="/projects">Learn More</Link>
               </Button>
             </CardFooter>
           </MotionCard>
@@ -110,7 +108,6 @@ export default function Description() {
           >
             <CardHeader>
               <CardTitle className="text-4xl mb-4">The Friendly Fox</CardTitle>
-              <CardDescription>TBD</CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
               <p>
@@ -127,9 +124,7 @@ export default function Description() {
             </CardContent>
             <CardFooter>
               <Button asChild>
-                <Link href="https://friendly-fox.co.uk" target="_blank">
-                  Learn More
-                </Link>
+                <Link href="/projects">Learn More</Link>
               </Button>
             </CardFooter>
           </MotionCard>
