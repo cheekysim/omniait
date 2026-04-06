@@ -155,7 +155,7 @@ export default function HeroSVGMobile() {
       {/* Left Wavy Line - Accent */}
       <motion.path
         className="stroke-accent"
-        d="M0 180 Q30 160 60 180 T100 220 T100 260"
+        d="M0 180 Q60 320 120 360 T300 440 T400 600"
         fill="transparent"
         strokeLinecap="round"
         strokeWidth="1"
@@ -168,7 +168,7 @@ export default function HeroSVGMobile() {
       {/* Left Wavy Line - White */}
       <motion.path
         className="stroke-white"
-        d="M0 260 Q25 240 50 270 T90 310"
+        d="M0 180 Q0 400 120 380 T440 600"
         fill="transparent"
         strokeLinecap="round"
         strokeWidth="1"
@@ -353,7 +353,7 @@ export default function HeroSVGMobile() {
       {/* Right Wavy Line - Accent */}
       <motion.path
         className="stroke-accent"
-        d="M728 380 Q698 400 668 380 T628 420 T628 460"
+        d="M728 380 Q600 400 668 380 T530 420 T600 728"
         fill="transparent"
         strokeLinecap="round"
         strokeWidth="1"
@@ -366,7 +366,7 @@ export default function HeroSVGMobile() {
       {/* Right Wavy Line - White */}
       <motion.path
         className="stroke-white"
-        d="M728 310 Q703 330 678 300 T638 340"
+        d="M728 380 Q600 400 668 340 T530 420 T700 728"
         fill="transparent"
         strokeLinecap="round"
         strokeWidth="1"
