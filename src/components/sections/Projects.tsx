@@ -75,7 +75,8 @@ export default function Description() {
             <CardContent className="space-y-2">
               <p>
                 We were approached by Passport Expert with an idea to create a
-                simple platform for UK Passports.
+                simple platform for UK Passports. They are now a successful
+                online business with a growing customer base!
               </p>
               <Image
                 src="/PassportExpert.png"
@@ -112,7 +113,10 @@ export default function Description() {
             <CardContent className="space-y-2">
               <p>
                 Our latest project is with The Friendly Fox, a pub based in
-                Newport looking to start fresh!
+                Newport looking to start fresh! They are now a popular local
+                spot with a vibrant community atmosphere. With a website built
+                by us, they have been able to reach a wider audience and grow
+                their business!
               </p>
               <Image
                 src="/FriendlyFox.png"
