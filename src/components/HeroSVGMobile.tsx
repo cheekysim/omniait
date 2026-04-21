@@ -402,20 +402,6 @@ export default function HeroSVGMobile() {
         animate="visible"
       />
 
-      {/* Center Diamond Shape */}
-      <motion.path
-        className="stroke-accent"
-        d="M364 450 L390 480 L364 510 L338 480 Z"
-        fill="transparent"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1"
-        variants={draw}
-        custom={1}
-        initial="hidden"
-        animate="visible"
-      />
-
       {/* Center scattered circles */}
       <motion.circle
         className="stroke-primary"
