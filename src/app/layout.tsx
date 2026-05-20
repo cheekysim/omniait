@@ -6,6 +6,8 @@ import React from "react";
 
 import { rootMetadata } from "@/lib/metadata";
 
+import Footer from "@/components/sections/Footer";
+
 export function ThemeProvider({
   children,
   ...props
@@ -34,6 +36,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${nunito.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
+        <Footer />
       </body>
     </html>
   );
