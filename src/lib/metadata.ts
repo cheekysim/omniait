@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Omnia IT",
   description:
     "Omnia IT is a professional web development agency creating high-performance, modern websites and applications for businesses.",
-  url: "https://omniait.co.uk",
+  url: "https://www.omniait.co.uk",
   // Place a 1200×630 PNG at /public/og-image.png to enable rich social previews.
   ogImage: "/og-image.png",
 };
