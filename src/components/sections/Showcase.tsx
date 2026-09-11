@@ -86,14 +86,16 @@ function Item(project: Project) {
                       onPointerDown={(event) => {
                         if (event.pointerType === "touch") {
                           event.preventDefault();
-                          setIsDownTooltipOpen((open) => !open);
+                          setIsDownTooltipOpen(true);
                         }
                       }}
                     >
                       <Button disabled>Visit Project</Button>
                     </span>
                   </TooltipTrigger>
-                  <TooltipContent>The site is down.</TooltipContent>
+                  <TooltipContent className="border bg-popover text-primary [&>svg]:bg-popover [&>svg]:fill-popover">
+                    The site is down.
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             ) : (
