@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import {
   Card,
@@ -31,6 +31,7 @@ interface Project {
 
 function Item(project: Project) {
   const ref = useRef(null);
+  const [isDownTooltipOpen, setIsDownTooltipOpen] = useState(false);
   const isInView = useInView(ref, { once: false, amount: 0.9 });
   // const isInView = false;
 
@@ -76,9 +77,19 @@ function Item(project: Project) {
           <CardFooter>
             {project.isDown ? (
               <TooltipProvider>
-                <Tooltip>
+                <Tooltip
+                  open={isDownTooltipOpen}
+                  onOpenChange={setIsDownTooltipOpen}
+                >
                   <TooltipTrigger asChild>
-                    <span>
+                    <span
+                      onPointerDown={(event) => {
+                        if (event.pointerType === "touch") {
+                          event.preventDefault();
+                          setIsDownTooltipOpen((open) => !open);
+                        }
+                      }}
+                    >
                       <Button disabled>Visit Project</Button>
                     </span>
                   </TooltipTrigger>
