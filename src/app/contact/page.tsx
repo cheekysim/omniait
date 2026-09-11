@@ -78,13 +78,6 @@ export default function ContactPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Re-initialize the invisible widget whenever the form is shown (mount and
-  // "Send another message"), so a fresh security check runs after each send.
-  useEffect(() => {
-    if (status === "idle") renderWidget();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status, siteKey]);
-
   const update = (field: keyof FormValues, value: string) => {
     setValues((current) => ({ ...current, [field]: value }));
     setErrors((current) => ({ ...current, [field]: undefined }));
@@ -123,7 +116,6 @@ export default function ContactPage() {
       setStatus("success");
       setValues(initialValues);
       setToken("");
-      window.turnstile?.reset(widgetId.current);
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
@@ -252,7 +244,16 @@ export default function ContactPage() {
                           />
                         </Field>
                         <motion.div {...entrance(6)} className="flex flex-col gap-4">
-                          <div ref={turnstileRef} aria-label="Security check" />
+                          {/* Mount-callback ref: renders a fresh invisible widget exactly when the
+                              container mounts — on first load and again after "Send another message" —
+                              so the hidden security check re-runs after every send. */}
+                          <div
+                            ref={(el) => {
+                              turnstileRef.current = el;
+                              if (el && status === "idle") renderWidget();
+                            }}
+                            aria-label="Security check"
+                          />
                           <Button
                             type="submit"
                             size="lg"
