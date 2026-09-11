@@ -70,8 +70,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const transporter = nodemailer.createTransport({ host: SMTP_HOST, port: Number(SMTP_PORT), secure: Number(SMTP_PORT) === 465, auth: { user: SMTP_USER, pass: SMTP_PASS } });
-    const timestamp = new Date().toISOString();
-    await transporter.sendMail({ from: SMTP_FROM, to: SMTP_TO, replyTo: email, subject: `New contact form message from ${name}`, text: `Name: ${name}\nEmail: ${email}\nTimestamp: ${timestamp}\n\nMessage:\n${message}` });
+    await transporter.sendMail({ from: SMTP_FROM, to: SMTP_TO, replyTo: email, subject: `New contact form message from ${name}`, text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}` });
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json({ success: false, error: "We could not send your message right now. Please try again shortly." }, { status: 503 });
