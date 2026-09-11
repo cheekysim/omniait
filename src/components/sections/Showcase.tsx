@@ -14,12 +14,19 @@ import {
 } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface Project {
   title: string;
   description: string;
   imageUrl: string;
   link: string;
+  isDown?: boolean;
 }
 
 function Item(project: Project) {
@@ -67,11 +74,24 @@ function Item(project: Project) {
             {/* </ScrollArea> */}
           </CardContent>
           <CardFooter>
-            <Button asChild>
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                Visit Project
-              </a>
-            </Button>
+            {project.isDown ? (
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span>
+                      <Button disabled>Visit Project</Button>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>The site is down.</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            ) : (
+              <Button asChild>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  Visit Project
+                </a>
+              </Button>
+            )}
           </CardFooter>
         </Card>
       </motion.div>
@@ -101,6 +121,7 @@ export default function Showcase() {
         "A sophisticated web application engineered for seamless user interactions and meaningful connections. Leveraging cutting-edge frameworks and real-time technologies, this platform delivers instant responsiveness and fluid animations. Features secure user authentication, intuitive interface design, and scalable architecture built to handle growing user bases. The sleek, modern aesthetic creates an inviting digital space that encourages engagement and retention.",
       imageUrl: "/KissedToge.png",
       link: "https://kissedtoge.live",
+      isDown: true,
     },
     {
       title: "Conservatory Solutions Wales",
