@@ -84,10 +84,8 @@ function Item(project: Project) {
                   <TooltipTrigger asChild>
                     <span
                       onPointerDown={(event) => {
-                        if (event.pointerType === "touch") {
-                          event.preventDefault();
-                          setIsDownTooltipOpen(true);
-                        }
+                        event.preventDefault();
+                        setIsDownTooltipOpen(true);
                       }}
                     >
                       <Button disabled>Visit Project</Button>
