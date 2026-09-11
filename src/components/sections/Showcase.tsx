@@ -131,8 +131,7 @@ export default function Showcase() {
       description:
         "A sophisticated web application engineered for seamless user interactions and meaningful connections. Leveraging cutting-edge frameworks and real-time technologies, this platform delivers instant responsiveness and fluid animations. Features secure user authentication, intuitive interface design, and scalable architecture built to handle growing user bases. The sleek, modern aesthetic creates an inviting digital space that encourages engagement and retention.",
       imageUrl: "/KissedToge.png",
-      link: "https://kissedtoge.live",
-      isDown: true,
+      link: "http://kissedtoge.omniait.co.uk/",
     },
     {
       title: "Conservatory Solutions Wales",

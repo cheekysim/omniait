@@ -40,7 +40,7 @@ const portfolioJsonLd = {
       item: {
         "@type": "WebSite",
         name: "KissedToge",
-        url: "https://kissedtoge.live",
+        url: "http://kissedtoge.omniait.co.uk/",
         description:
           "A sophisticated web application with real-time features and secure user authentication.",
       },
