@@ -25,17 +25,20 @@ export default function GridBackground() {
   // Mouse-follow glow via CSS variables to avoid frequent React state updates
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
-      if (!mouseElRef.current) return;
+      const el = mouseElRef.current;
+      if (!el) return;
       const mouseX = e.clientX;
       const mouseY = e.clientY;
 
-      // Update position directly to avoid stacking zero-duration WAAPI animations
-      // mouseElRef.current.style.left = `${mouseX}px`;
-      // mouseElRef.current.style.top = `${mouseY}px`;
+      // Center the glow on the cursor. The WAAPI transform below fully replaces
+      // the element's CSS `transform` (including Tailwind's -translate-x/y-1/2),
+      // so fold the half-size offset into the translate3d itself.
+      const dx = el.offsetWidth / 2;
+      const dy = el.offsetHeight / 2;
 
-      mouseElRef.current.animate(
+      el.animate(
         {
-          transform: `translate3d(${mouseX}px, ${mouseY}px, 0)`,
+          transform: `translate3d(${mouseX - dx}px, ${mouseY - dy}px, 0)`,
         },
         { duration: 1000, fill: "forwards", easing: "ease-out" }
       );
@@ -51,7 +54,7 @@ export default function GridBackground() {
       {/* Follow Mouse / Glow */}
       <div
         ref={mouseElRef}
-        className="fixed z-0 size-42 bg-radial-[circle] from-white to-white/50 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-0 md:opacity-30"
+        className="fixed left-0 top-0 z-0 size-42 bg-radial-[circle] from-white to-white/50 rounded-full pointer-events-none blur-3xl opacity-0 md:opacity-30"
       ></div>
       <motion.div
         ref={containerRef}

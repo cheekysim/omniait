@@ -108,3 +108,25 @@ export const projectsMetadata: Metadata = {
     canonical: `${siteConfig.url}/projects`,
   },
 };
+
+export const contactMetadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Omnia IT to discuss a high-performance website, application, or digital project.",
+  openGraph: {
+    ...rootMetadata.openGraph,
+    title: "Contact | Omnia IT",
+    description:
+      "Contact Omnia IT to discuss a high-performance website, application, or digital project.",
+    url: `${siteConfig.url}/contact`,
+  },
+  twitter: {
+    ...rootMetadata.twitter,
+    title: "Contact | Omnia IT",
+    description:
+      "Contact Omnia IT to discuss a high-performance website, application, or digital project.",
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/contact`,
+  },
+};

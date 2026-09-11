@@ -33,9 +33,8 @@ export default function Footer() {
             {/* <Link href="/about">About Us</Link> */}
             About Us
           </Button>
-          <Button variant="outline" size="sm" disabled>
-            {/* <Link href="/contact">Contact</Link> */}
-            Contact
+          <Button variant="outline" size="sm" asChild>
+            <Link href="/contact">Contact</Link>
           </Button>
         </div>
         {/* Socials */}
