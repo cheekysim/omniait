@@ -54,7 +54,7 @@ export default function GridBackground() {
       {/* Follow Mouse / Glow */}
       <div
         ref={mouseElRef}
-        className="fixed z-0 size-42 bg-radial-[circle] from-white to-white/50 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-0 md:opacity-30"
+        className="fixed left-0 top-0 z-0 size-42 bg-radial-[circle] from-white to-white/50 rounded-full pointer-events-none blur-3xl opacity-0 md:opacity-30"
       ></div>
       <motion.div
         ref={containerRef}
