@@ -34,6 +34,7 @@ export default function ContactPage() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [token, setToken] = useState("");
+  const [captchaError, setCaptchaError] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const turnstileRef = useRef<HTMLDivElement>(null);
@@ -54,12 +55,20 @@ export default function ContactPage() {
       widgetId.current = undefined;
     }
     setToken("");
+    setCaptchaError("");
     widgetId.current = window.turnstile.render(turnstileRef.current, {
       sitekey: siteKey,
       appearance: "interaction-only",
       callback: (value: string) => setToken(value),
-      "expired-callback": () => setToken(""),
-      "error-callback": () => setToken(""),
+      "expired-callback": () => {
+        setToken("");
+        setCaptchaError("");
+        renderWidget();
+      },
+      "error-callback": () => {
+        setToken("");
+        setCaptchaError("Security check unavailable — please reload or email us directly.");
+      },
     });
   };
 
@@ -267,6 +276,8 @@ export default function ContactPage() {
                               </>
                             ) : !siteKey ? (
                               <>Security check unavailable &mdash; please email us directly</>
+                            ) : captchaError ? (
+                              <>{captchaError}</>
                             ) : !token ? (
                               <>
                                 <Spinner data-icon="inline-start" />
