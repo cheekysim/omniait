@@ -19,7 +19,16 @@ function isRateLimited(ip: string) {
   return entry.count > 3;
 }
 
+const MAX_BODY_BYTES = 64_000; // generous cap for a contact message, far under Vercel's limit
+
 export async function POST(request: NextRequest) {
+  // Reject oversized payloads before parsing (cheap memory/abuse guard for the
+  // normal browser path, which always sends Content-Length).
+  const contentLength = Number(request.headers.get("content-length") ?? "0");
+  if (contentLength > MAX_BODY_BYTES) {
+    return NextResponse.json({ success: false, error: "Message too large." }, { status: 413 });
+  }
+
   const clientIp = getClientIp(request);
   if (isRateLimited(clientIp)) {
     return NextResponse.json({ success: false, error: "Too many messages. Please try again in a minute." }, { status: 429 });
