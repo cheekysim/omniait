@@ -109,6 +109,28 @@ export const projectsMetadata: Metadata = {
   },
 };
 
+export const aboutMetadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Omnia IT, an independent web development agency in Caldicot, South Wales building high-performance websites and web applications.",
+  openGraph: {
+    ...rootMetadata.openGraph,
+    title: "About Us | Omnia IT",
+    description:
+      "Learn about Omnia IT, an independent web development agency in Caldicot, South Wales building high-performance websites and web applications.",
+    url: `${siteConfig.url}/about`,
+  },
+  twitter: {
+    ...rootMetadata.twitter,
+    title: "About Us | Omnia IT",
+    description:
+      "Learn about Omnia IT, an independent web development agency in Caldicot, South Wales building high-performance websites and web applications.",
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
+};
+
 export const contactMetadata: Metadata = {
   title: "Contact",
   description:

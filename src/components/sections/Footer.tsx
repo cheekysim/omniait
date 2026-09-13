@@ -29,9 +29,8 @@ export default function Footer() {
           <Button variant="outline" size="sm" asChild>
             <Link href="/projects">Projects</Link>
           </Button>
-          <Button variant="outline" size="sm" disabled>
-            {/* <Link href="/about">About Us</Link> */}
-            About Us
+          <Button variant="outline" size="sm" asChild>
+            <Link href="/about">About Us</Link>
           </Button>
           <Button variant="outline" size="sm" asChild>
             <Link href="/contact">Contact</Link>
