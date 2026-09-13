@@ -130,3 +130,25 @@ export const contactMetadata: Metadata = {
     canonical: `${siteConfig.url}/contact`,
   },
 };
+
+export const aboutMetadata: Metadata = {
+  title: "About Us",
+  description:
+    "Omnia IT is an independent web development agency run by Euan Bell from Caldicot, South Wales, building modern, high-performance websites and web applications for businesses.",
+  openGraph: {
+    ...rootMetadata.openGraph,
+    title: "About Us | Omnia IT",
+    description:
+      "Learn about Omnia IT, the independent web development agency run by Euan Bell from Caldicot, South Wales — building modern, high-performance websites and web applications for businesses.",
+    url: `${siteConfig.url}/about`,
+  },
+  twitter: {
+    ...rootMetadata.twitter,
+    title: "About Us | Omnia IT",
+    description:
+      "Learn about Omnia IT, the independent web development agency run by Euan Bell from Caldicot, South Wales.",
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
+};
