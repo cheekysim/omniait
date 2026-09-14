@@ -40,8 +40,8 @@ export default function AboutHero() {
           transition={{ duration: 0.7, delay: 0.78 }}
           className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl"
         >
-          We build websites and web applications that are fast, clear, and genuinely
-          useful &mdash; so your business comes across online the way it deserves to.
+          We build websites and web apps that are quick to load, easy to use, and
+          actually help your business online.
         </motion.p>
       </div>
       <motion.svg viewBox="0 0 200 200" className="absolute bottom-8 right-[8%] hidden size-40 text-white/35 md:block" aria-hidden="true">

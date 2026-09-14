@@ -147,9 +147,8 @@ export default function ContactPage() {
             Let&apos;s talk about your project.
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-            Tell us what you&apos;re hoping to build &mdash; a new website, a refresh, or an idea you&apos;re
-            still working out. No jargon, no pressure. We&apos;ll talk it through and see if we&apos;re a
-            good fit.
+            Tell us what you&apos;re hoping to build: a new website, a refresh, or an idea you&apos;re
+            still working out. We&apos;ll keep it simple, talk it through, and see if we&apos;re a good fit.
           </p>
         </motion.header>
         <div className="grid items-start gap-8 lg:grid-cols-[0.8fr_1.2fr]">
