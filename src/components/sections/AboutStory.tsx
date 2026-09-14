@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 
-const story = "Omnia IT is a hands-on independent web development agency founded and run by Euan Bell in Caldicot, South Wales. We began by helping The Passport Expert turn an idea into a focused digital home, and have since worked with local businesses including The Friendly Fox in Newport, as well as web applications and specialist businesses across Wales.".split(" ");
+const story = "Omnia IT is a small, hands-on web development agency run by Euan Bell in Caldicot, South Wales. It started with a single job — helping The Passport Expert turn an idea into a website that genuinely worked for them — and grew from there. Since then we have built for local businesses like The Friendly Fox in Newport, as well as web applications and specialist businesses across Wales.".split(" ");
 
 export default function AboutStory() {
   const prefersReducedMotion = useReducedMotion();

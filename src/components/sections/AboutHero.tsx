@@ -19,7 +19,7 @@ export default function AboutHero() {
           transition={{ duration: 0.6 }}
           className="mb-5 text-sm font-semibold tracking-[0.24em] text-primary uppercase"
         >
-          Independent by design
+          Nice to meet you
         </motion.p>
         <h1 className="text-6xl font-semibold tracking-tight sm:text-8xl md:text-9xl">
           {title.map((letter, index) => (
@@ -40,7 +40,8 @@ export default function AboutHero() {
           transition={{ duration: 0.7, delay: 0.78 }}
           className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl"
         >
-          We build modern, high-performance websites and web applications for businesses that want their digital presence to do more.
+          We build websites and web applications that are fast, clear, and genuinely
+          useful &mdash; so your business comes across online the way it deserves to.
         </motion.p>
       </div>
       <motion.svg viewBox="0 0 200 200" className="absolute bottom-8 right-[8%] hidden size-40 text-white/35 md:block" aria-hidden="true">
