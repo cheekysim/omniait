@@ -2,17 +2,51 @@
 
 import { motion, useReducedMotion } from "motion/react";
 
-const technologies = ["Next.js", "SvelteKit", "TypeScript", "Tailwind CSS", "Responsive Design", "SEO", "Vercel", "Zoho Email"];
+const TAGS = [
+  "Next.js",
+  "SvelteKit",
+  "Vercel",
+  "TypeScript",
+  "Tailwind CSS",
+  "Responsive Design",
+  "SEO",
+  "Node.js",
+  "Git & GitHub",
+];
 
 export default function AboutTech() {
-  const prefersReducedMotion = useReducedMotion();
-  const tags = [...technologies, ...technologies];
+  const reduced = useReducedMotion();
 
   return (
-    <section className="relative z-10 overflow-hidden border-y border-border/70 py-6">
-      <motion.div className="flex w-max gap-4" animate={prefersReducedMotion ? undefined : { x: ["0%", "-50%"] }} transition={{ duration: 28, repeat: Infinity, ease: "linear" }}>
-        {tags.map((technology, index) => <span key={`${technology}-${index}`} className="rounded-full border border-border bg-card/60 px-5 py-2 text-sm font-medium whitespace-nowrap text-muted-foreground backdrop-blur-sm">{technology}</span>)}
-      </motion.div>
+    <section className="relative flex flex-col items-center justify-center min-h-[45vh] px-6 md:px-10 overflow-hidden py-24">
+      <p className="text-primary text-sm tracking-widest uppercase">The toolkit</p>
+      <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+        Clean, modern, fast
+      </h2>
+
+      {/* Infinite marquee */}
+      <div className="relative w-full max-w-5xl mt-12 overflow-hidden" aria-hidden="true">
+        <div className="pointer-events-none absolute inset-y-0 left-0 right-0 bg-radial-[circle] from-transparent to-background" />
+        <motion.div
+          className="flex gap-4 whitespace-nowrap w-max"
+          style={{ x: reduced ? 0 : "-50%" }}
+          animate={reduced ? undefined : { x: ["0%", "-50%"] }}
+          transition={
+            reduced
+              ? { duration: 0 }
+              : { x: { duration: 26, repeat: Infinity, ease: "linear" } }
+          }
+        >
+          {[...TAGS, ...TAGS].map((tag, i) => (
+            <span
+              key={i}
+              className="rounded-full border border-border px-4 py-2 text-base whitespace-nowrap text-white/80"
+            >
+              {tag}
+            </span>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }
