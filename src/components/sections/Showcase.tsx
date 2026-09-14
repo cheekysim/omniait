@@ -115,28 +115,28 @@ export default function Showcase() {
     {
       title: "The Passport Expert",
       description:
-        "A comprehensive multi-page website built with SvelteKit, delivering lightning-fast performance and seamless user experience. Features intuitive navigation, responsive design across all devices, and optimized SEO to help clients discover passport services effortlessly. The modern tech stack ensures quick load times and smooth transitions, converting visitors into customers with a professional, trustworthy online presence.",
+        "A multi-page website built with SvelteKit, covering everything The Passport Expert offers. It loads fast, navigates easily, and works just as well on a phone as on a computer. The SEO means people searching for passport help actually find the site, and it comes across as the kind of business you can trust with your documents.",
       imageUrl: "/PassportExpert.png",
       link: "https://thepassportexpert.co.uk",
     },
     {
       title: "The Friendly Fox",
       description:
-        "A vibrant, engaging website designed to bring a local community together. Built with modern web technologies, this site features an attractive, welcoming design that reflects the pub's warm atmosphere. Includes event calendars, menu displays, and mobile-optimized booking functionality to drive foot traffic and increase reservations. The responsive layout ensures customers can easily find information whether they're at home or on the go.",
+        "A website for the local pub, built to feel as welcoming as the place itself. It keeps the essentials up front: an events calendar, the menu, and mobile-friendly booking so people can reserve a table from the sofa. Whatever you're there for, it's easy to find.",
       imageUrl: "/FriendlyFox.png",
       link: "https://friendly-fox.co.uk",
     },
     {
       title: "KissedToge",
       description:
-        "A sophisticated web application engineered for seamless user interactions and meaningful connections. Leveraging cutting-edge frameworks and real-time technologies, this platform delivers instant responsiveness and fluid animations. Features secure user authentication, intuitive interface design, and scalable architecture built to handle growing user bases. The sleek, modern aesthetic creates an inviting digital space that encourages engagement and retention.",
+        "A web app built to help people connect without the laggy, clunky feel that sinks so many platforms. Real-time tech keeps interactions instant, accounts are handled securely, and the interface stays simple. It's built to grow too, ready for more users as the community does.",
       imageUrl: "/KissedToge.png",
       link: "http://kissedtoge.omniait.co.uk/",
     },
     {
       title: "Conservatory Solutions Wales",
       description:
-        "A professional, conversion-focused website showcasing premium conservatory services with stunning visual galleries and detailed service descriptions. Built with performance optimization in mind, the site loads quickly and ranks well in local search results, bringing qualified leads directly to the business. Features include before-and-after galleries, customer testimonials, easy quote request forms, and mobile-responsive design that looks impeccable on every device.",
+        "A website for a conservatory business that's all about getting enquiries. Photo galleries show real before-and-afters, and the service pages explain things clearly. It loads quickly and ranks for local searches, so the leads that come in are people actually looking for a conservatory. Quote requests take a couple of clicks, and it looks right on any screen.",
       imageUrl: "/ConservatorySolutionsWales.png",
       link: "https://conservatorysolutionswales.co.uk",
     },
