@@ -6,7 +6,7 @@ import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/reac
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
-  { title: "Web Development", description: "Thoughtful business websites built to feel clear, fast, and unmistakably yours.", icon: Code2 },
+  { title: "Web Development", description: "Business websites that are clear and fast, and feel like they belong to you.", icon: Code2 },
   { title: "Responsive Design", description: "Layouts that earn their place on every screen, from the first mobile tap to desktop detail.", icon: MonitorSmartphone },
   { title: "SEO & Performance", description: "Search visibility and quick loading are part of the build, not a layer added afterwards.", icon: Search },
   { title: "Web Applications", description: "Useful, focused web applications for ideas that need more than a brochure site.", icon: Gauge },
