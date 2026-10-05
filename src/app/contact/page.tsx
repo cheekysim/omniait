@@ -142,13 +142,13 @@ export default function ContactPage() {
       <BackHome />
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12">
         <motion.header {...entrance(0)} className="max-w-3xl">
-          <p className="font-mono text-sm tracking-[0.3em] text-primary uppercase">Open a channel</p>
+          <p className="font-mono text-sm tracking-[0.3em] text-primary uppercase">Get in touch</p>
           <h1 className="mt-3 text-5xl font-semibold tracking-tight sm:text-7xl">
-            Let&apos;s make the next <span className="text-primary">signal</span> count.
+            Let&apos;s talk about your project.
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-            Tell us where you are heading. We&apos;ll bring technical clarity, momentum, and a
-            considered digital experience to the conversation.
+            Tell us what you&apos;re hoping to build: a new website, a refresh, or an idea you&apos;re
+            still working out. We&apos;ll keep it simple, talk it through, and see if we&apos;re a good fit.
           </p>
         </motion.header>
         <div className="grid items-start gap-8 lg:grid-cols-[0.8fr_1.2fr]">
@@ -164,7 +164,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl">Start the conversation</CardTitle>
-                <CardDescription>Share the outline. We&apos;ll take it from there.</CardDescription>
+                <CardDescription>Tell us a bit about what you need, and we&apos;ll take it from there.</CardDescription>
               </CardHeader>
               <CardContent>
                 <AnimatePresence mode="wait">
@@ -186,7 +186,7 @@ export default function ContactPage() {
                       <div className="flex flex-col gap-2">
                         <h2 className="text-3xl font-semibold">Message sent.</h2>
                         <p className="max-w-sm text-muted-foreground">
-                          Your signal is on its way. We&apos;ll be in touch shortly.
+                          Thanks, your message is on its way. We&apos;ll get back to you as soon as we can.
                         </p>
                       </div>
                       <Button variant="outline" onClick={() => setStatus("idle")}>
@@ -272,7 +272,7 @@ export default function ContactPage() {
                             {status === "submitting" ? (
                               <>
                                 <Spinner data-icon="inline-start" />
-                                Sending signal&hellip;
+                                Sending&hellip;
                               </>
                             ) : !siteKey ? (
                               <>Security check unavailable &mdash; please email us directly</>

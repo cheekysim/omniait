@@ -15,9 +15,9 @@ export default function AboutCTA() {
         <Sparkles className="mx-auto mb-5 size-6 text-primary" strokeWidth={1.5} />
         <p className="text-sm font-semibold tracking-[0.24em] text-primary uppercase">Start a conversation</p>
         <h2 className="mx-auto mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">Have a project taking shape?</h2>
-        <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-muted-foreground">Tell us where you are now and where the website or application needs to take you.</p>
+        <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-muted-foreground">Whatever stage you&apos;re at, tell us about what you need and we&apos;ll help you figure out the next step.</p>
         <Button asChild variant="outline" size="lg" className="mt-8 border-white/30 bg-transparent text-foreground hover:bg-white hover:text-background">
-          <Link href="/contact">Talk to Omnia IT <ArrowUpRight /></Link>
+          <Link href="/contact">Get in touch <ArrowUpRight /></Link>
         </Button>
       </motion.div>
     </section>
